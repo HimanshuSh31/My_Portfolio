@@ -5,6 +5,9 @@ const icon = document.getElementById('toggle-icon');
 const html = document.documentElement;
 
 function updateToggleUI(isDark) {
+  if (toggle) {
+    toggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
+  }
   if (knob && icon) {
     if (isDark) {
       knob.classList.remove('translate-x-0');
@@ -212,9 +215,13 @@ function initCertFiltering() {
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Toggle active states
-      filterBtns.forEach(b => b.classList.remove('active-filter'));
+      // Toggle active states and ARIA pressed states
+      filterBtns.forEach(b => {
+        b.classList.remove('active-filter');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active-filter');
+      btn.setAttribute('aria-pressed', 'true');
 
       const filterValue = btn.getAttribute('data-filter');
 

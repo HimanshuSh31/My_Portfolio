@@ -34,6 +34,14 @@
     };
   </script>
 
+  <!-- Preconnect to CDNs & Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -48,9 +56,9 @@
 
   <!-- Floating Glass Social Dock -->
   <div class="fixed right-4 bottom-8 flex flex-col gap-4 p-3 z-50 rounded-2xl bg-white/70 border border-gray-200/50 dark:bg-gray-900/70 dark:border-gray-800/50 backdrop-blur-lg shadow-xl text-violet-600 dark:text-violet-400">
-    <a href="https://www.linkedin.com/in/himanshu-sharma31/" target="_blank" class="hover:scale-125 hover:text-violet-800 dark:hover:text-violet-300 transition-all duration-200 text-xl" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/HimanshuSh31" target="_blank" class="hover:scale-125 hover:text-violet-800 dark:hover:text-violet-300 transition-all duration-200 text-xl" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="mailto:himanshu.sharma3100@gmail.com" class="hover:scale-125 hover:text-violet-800 dark:hover:text-violet-300 transition-all duration-200 text-xl" title="Email"><i class="fas fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/himanshu-sharma31/" target="_blank" class="hover:scale-125 hover:text-violet-800 dark:hover:text-violet-300 transition-all duration-200 text-xl" title="LinkedIn" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/HimanshuSh31" target="_blank" class="hover:scale-125 hover:text-violet-800 dark:hover:text-violet-300 transition-all duration-200 text-xl" title="GitHub" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+    <a href="mailto:himanshu.sharma3100@gmail.com" class="hover:scale-125 hover:text-violet-800 dark:hover:text-violet-300 transition-all duration-200 text-xl" title="Email" aria-label="Send Email"><i class="fas fa-envelope"></i></a>
   </div>
 
   <!-- Back to Top -->
@@ -74,13 +82,13 @@
           <a href="#projects" class="nav-link text-gray-600 hover:text-violet-600 dark:text-gray-300 dark:hover:text-violet-400 transition-colors" data-section="projects">Projects</a>
           <a href="#contact" class="nav-link text-gray-600 hover:text-violet-600 dark:text-gray-300 dark:hover:text-violet-400 transition-colors" data-section="contact">Contact</a>
         </div>
-        <button id="toggle-dark" class="relative w-14 h-8 rounded-full p-1 bg-gray-200 dark:bg-gray-800 border border-gray-300/30 dark:border-gray-700/30 transition-all duration-300 focus:outline-none flex items-center cursor-pointer shadow-inner" aria-label="Toggle Dark Mode">
+        <button id="toggle-dark" class="relative w-14 h-8 rounded-full p-1 bg-gray-200 dark:bg-gray-800 border border-gray-300/30 dark:border-gray-700/30 transition-all duration-300 focus:outline-none flex items-center cursor-pointer shadow-inner" aria-label="Toggle Dark Mode" role="switch" aria-checked="false">
           <div id="toggle-knob" class="w-6 h-6 rounded-full bg-white dark:bg-gray-950 shadow-md flex items-center justify-center transform transition-all duration-300 translate-x-0">
             <i id="toggle-icon" class="fas fa-sun text-amber-500 text-sm transition-transform duration-300 rotate-0"></i>
           </div>
         </button>
         <!-- Hamburger Button (mobile only) -->
-        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200" aria-label="Open Menu" aria-expanded="false">
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
           <span class="hamburger-line w-5 h-0.5 bg-gray-600 dark:bg-gray-300 rounded-full transition-all duration-300"></span>
           <span class="hamburger-line w-5 h-0.5 bg-gray-600 dark:bg-gray-300 rounded-full transition-all duration-300"></span>
           <span class="hamburger-line w-5 h-0.5 bg-gray-600 dark:bg-gray-300 rounded-full transition-all duration-300"></span>
@@ -445,10 +453,10 @@
 
     <!-- Filters -->
     <div class="flex flex-wrap justify-center gap-3 mb-10" id="cert-filter-container">
-      <button data-filter="all" class="filter-btn active-filter px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">All</button>
-      <button data-filter="data-analytics" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">Data Analytics</button>
-      <button data-filter="cloud-ai" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">Cloud & AI</button>
-      <button data-filter="iot" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold">IoT & Hardware</button>
+      <button data-filter="all" class="filter-btn active-filter px-4 py-2 rounded-full text-xs sm:text-sm font-semibold" aria-pressed="true" aria-label="Show all certifications">All</button>
+      <button data-filter="data-analytics" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold" aria-pressed="false" aria-label="Filter certifications by Data Analytics">Data Analytics</button>
+      <button data-filter="cloud-ai" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold" aria-pressed="false" aria-label="Filter certifications by Cloud and AI">Cloud & AI</button>
+      <button data-filter="iot" class="filter-btn px-4 py-2 rounded-full text-xs sm:text-sm font-semibold" aria-pressed="false" aria-label="Filter certifications by IoT and Hardware">IoT & Hardware</button>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="cert-list">
@@ -464,7 +472,8 @@
         </div>
         <div class="pt-2">
           <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_iuL7YGJQAZoEt5Tm2_1746544004623_completion_certificate.pdf" target="_blank"
-             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group">
+             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group"
+             aria-label="View Deloitte Australia Data Analytics Job Simulation Certificate PDF">
             View Certificate <i class="fas fa-arrow-up-right-from-square text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </a>
         </div>
@@ -481,7 +490,8 @@
         </div>
         <div class="pt-2">
           <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_iuL7YGJQAZoEt5Tm2_1747806699371_completion_certificate.pdf" target="_blank"
-             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group">
+             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group"
+             aria-label="View Deloitte Australia Technology Job Simulation Certificate PDF">
             View Certificate <i class="fas fa-arrow-up-right-from-square text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </a>
         </div>
@@ -498,7 +508,8 @@
         </div>
         <div class="pt-2">
           <a href="https://www.coursera.org/account/accomplishments/verify/LJNS1OTREEAL" target="_blank"
-             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group">
+             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group"
+             aria-label="Verify IIT Bombay Internet of Things Certificate on Coursera">
             Verify Link <i class="fas fa-arrow-up-right-from-square text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </a>
         </div>
@@ -515,7 +526,8 @@
         </div>
         <div class="pt-2">
           <a href="https://www.coursera.org/account/accomplishments/verify/FQV27RI7PEPM" target="_blank"
-             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group">
+             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group"
+             aria-label="Verify Google Cloud Introduction to LLMs Certificate on Coursera">
             Verify Link <i class="fas fa-arrow-up-right-from-square text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </a>
         </div>
@@ -532,7 +544,8 @@
         </div>
         <div class="pt-2">
           <a href="https://academy.tdra.gov.ae/verify?i=268840" target="_blank"
-             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group">
+             class="inline-flex items-center gap-1.5 text-sm font-semibold text-violet-600 hover:text-violet-800 dark:text-violet-400 dark:hover:text-violet-300 transition-colors group"
+             aria-label="Verify TDRA Academy IoT Concept and Application Certificate">
             Verify Link <i class="fas fa-arrow-up-right-from-square text-xs transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
           </a>
         </div>
@@ -563,7 +576,7 @@
         </div>
         <div class="flex justify-between items-center pt-2">
           <span class="text-xs text-gray-500 dark:text-gray-400">Software Architecture</span>
-          <a href="https://github.com/HimanshuSh31" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="GitHub Repository">
+          <a href="https://github.com/HimanshuSh31/Pharmacy-Management-System" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="View Pharmacy Management System GitHub Repository">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -588,7 +601,7 @@
         </div>
         <div class="flex justify-between items-center pt-2">
           <span class="text-xs text-gray-500 dark:text-gray-400">Machine Learning</span>
-          <a href="https://github.com/HimanshuSh31" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="GitHub Repository">
+          <a href="https://github.com/HimanshuSh31/Movie-Recommendation-System" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="View Movie Recommendation System GitHub Repository">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -613,7 +626,7 @@
         </div>
         <div class="flex justify-between items-center pt-2">
           <span class="text-xs text-gray-500 dark:text-gray-400">Game Development</span>
-          <a href="https://github.com/HimanshuSh31" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="GitHub Repository">
+          <a href="https://github.com/HimanshuSh31/Customer-is-King" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="View Customer is King Game GitHub Repository">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -639,7 +652,7 @@
         </div>
         <div class="flex justify-between items-center pt-2">
           <span class="text-xs text-gray-500 dark:text-gray-400">Desktop Application</span>
-          <a href="https://github.com/HimanshuSh31" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="GitHub Repository">
+          <a href="https://github.com/HimanshuSh31/Personal-Wealth-Manager" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="View Personal Wealth Manager GitHub Repository">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -665,7 +678,7 @@
         </div>
         <div class="flex justify-between items-center pt-2">
           <span class="text-xs text-gray-500 dark:text-gray-400">Desktop Application</span>
-          <a href="https://github.com/HimanshuSh31" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="GitHub Repository">
+          <a href="https://github.com/HimanshuSh31/Bike-Showroom-Management" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="View Bike Showroom Management GitHub Repository">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -691,7 +704,7 @@
         </div>
         <div class="flex justify-between items-center pt-2">
           <span class="text-xs text-gray-500 dark:text-gray-400">Computer Vision</span>
-          <a href="https://github.com/HimanshuSh31" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="GitHub Repository">
+          <a href="https://github.com/HimanshuSh31/Computer-Vision-Face-Detector" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="View Computer Vision Face Detector GitHub Repository">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -717,7 +730,7 @@
         </div>
         <div class="flex justify-between items-center pt-2">
           <span class="text-xs text-gray-500 dark:text-gray-400">Machine Learning</span>
-          <a href="https://github.com/HimanshuSh31" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="GitHub Repository">
+          <a href="https://github.com/HimanshuSh31/Music-Recommendation-System" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="View Music Recommendation System GitHub Repository">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -743,7 +756,7 @@
         </div>
         <div class="flex justify-between items-center pt-2">
           <span class="text-xs text-gray-500 dark:text-gray-400">Web Development</span>
-          <a href="https://github.com/HimanshuSh31" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="GitHub Repository">
+          <a href="https://github.com/HimanshuSh31/Classic-Web-Games" target="_blank" class="w-8 h-8 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800/20 flex items-center justify-center hover:text-violet-600 dark:hover:text-violet-400 transition-colors" aria-label="View Classic Web Games GitHub Repository">
             <i class="fab fa-github"></i>
           </a>
         </div>
@@ -795,9 +808,9 @@
           <span class="text-xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600 dark:from-violet-400 dark:to-indigo-400 font-headings">Himanshu Sharma</span>
           <p class="text-sm text-gray-500 dark:text-gray-400 leading-relaxed max-w-xs">AI/ML Enthusiast &amp; Software Engineer building intelligent, data-driven solutions.</p>
           <div class="flex items-center gap-4 pt-2">
-            <a href="https://www.linkedin.com/in/himanshu-sharma31/" target="_blank" class="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 hover:scale-110 transition-all duration-200" title="LinkedIn"><i class="fab fa-linkedin text-sm"></i></a>
-            <a href="https://github.com/HimanshuSh31" target="_blank" class="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 hover:scale-110 transition-all duration-200" title="GitHub"><i class="fab fa-github text-sm"></i></a>
-            <a href="mailto:himanshu.sharma3100@gmail.com" class="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 hover:scale-110 transition-all duration-200" title="Email"><i class="fas fa-envelope text-sm"></i></a>
+            <a href="https://www.linkedin.com/in/himanshu-sharma31/" target="_blank" class="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 hover:scale-110 transition-all duration-200" title="LinkedIn" aria-label="LinkedIn Profile"><i class="fab fa-linkedin text-sm"></i></a>
+            <a href="https://github.com/HimanshuSh31" target="_blank" class="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 hover:scale-110 transition-all duration-200" title="GitHub" aria-label="GitHub Profile"><i class="fab fa-github text-sm"></i></a>
+            <a href="mailto:himanshu.sharma3100@gmail.com" class="w-9 h-9 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-600 dark:text-violet-400 hover:bg-violet-500/20 hover:scale-110 transition-all duration-200" title="Email" aria-label="Send Email"><i class="fas fa-envelope text-sm"></i></a>
           </div>
         </div>
         <!-- Quick Links -->
