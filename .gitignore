@@ -1,0 +1,17 @@
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Antigravity / Agentic workspace files
+.gemini/
+scratch/
