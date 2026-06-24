@@ -289,6 +289,48 @@ function initProjectFiltering() {
   });
 }
 
+// Skill Categorized Filtering
+function initSkillFiltering() {
+  const filterContainer = document.getElementById('skill-filter-container');
+  if (!filterContainer) return;
+  
+  const filterBtns = filterContainer.querySelectorAll('.filter-btn');
+  const skillCards = document.querySelectorAll('#skill-list .skill-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle active states and ARIA pressed states
+      filterBtns.forEach(b => {
+        b.classList.remove('active-filter');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active-filter');
+      btn.setAttribute('aria-pressed', 'true');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      skillCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filterValue === 'all' || category === filterValue) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            if (card.style.opacity === '0') {
+              card.style.display = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
 // Interactive Particle Network Background
 function initHeroParticles() {
   const canvas = document.getElementById('hero-particles');
@@ -418,6 +460,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initSpotlightGlow();
   initCertFiltering();
   initProjectFiltering();
+  initSkillFiltering();
   initHeroParticles();
   initMobileMenu();
   initActiveNavObserver();
@@ -430,6 +473,7 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
   initSpotlightGlow();
   initCertFiltering();
   initProjectFiltering();
+  initSkillFiltering();
   initHeroParticles();
   initMobileMenu();
   initActiveNavObserver();
