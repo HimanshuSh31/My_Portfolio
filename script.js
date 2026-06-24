@@ -211,7 +211,7 @@ function initCertFiltering() {
   if (!filterContainer) return;
   
   const filterBtns = filterContainer.querySelectorAll('.filter-btn');
-  const certCards = document.querySelectorAll('.cert-card');
+  const certCards = document.querySelectorAll('#cert-list .cert-card');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -226,6 +226,48 @@ function initCertFiltering() {
       const filterValue = btn.getAttribute('data-filter');
 
       certCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        if (filterValue === 'all' || category === filterValue) {
+          card.style.display = 'flex';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            if (card.style.opacity === '0') {
+              card.style.display = 'none';
+            }
+          }, 300);
+        }
+      });
+    });
+  });
+}
+
+// Project Categorized Filtering
+function initProjectFiltering() {
+  const filterContainer = document.getElementById('project-filter-container');
+  if (!filterContainer) return;
+  
+  const filterBtns = filterContainer.querySelectorAll('.filter-btn');
+  const projectCards = document.querySelectorAll('#project-list .project-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // Toggle active states and ARIA pressed states
+      filterBtns.forEach(b => {
+        b.classList.remove('active-filter');
+        b.setAttribute('aria-pressed', 'false');
+      });
+      btn.classList.add('active-filter');
+      btn.setAttribute('aria-pressed', 'true');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      projectCards.forEach(card => {
         const category = card.getAttribute('data-category');
         if (filterValue === 'all' || category === filterValue) {
           card.style.display = 'flex';
@@ -375,6 +417,7 @@ function initHeroParticles() {
 window.addEventListener('DOMContentLoaded', () => {
   initSpotlightGlow();
   initCertFiltering();
+  initProjectFiltering();
   initHeroParticles();
   initMobileMenu();
   initActiveNavObserver();
@@ -386,6 +429,7 @@ window.addEventListener('DOMContentLoaded', () => {
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
   initSpotlightGlow();
   initCertFiltering();
+  initProjectFiltering();
   initHeroParticles();
   initMobileMenu();
   initActiveNavObserver();
